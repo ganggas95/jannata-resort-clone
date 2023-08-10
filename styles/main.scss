@@ -1,12 +1,15 @@
-html, body {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-    font-family: 'Open Sans', sans-serif;
-    color: #5f5c68;
-    font-weight: 400;
-    overflow: hidden;
-    height: 100%;
-    width: 100%;
-    position: absolute;
+@import url(./screens/_main.scss);
+html,
+body {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Open Sans", sans-serif;
+  color: #5f5c68;
+  font-weight: 400;
+  overflow: hidden;
+  height: 100%;
+  width: 100%;
+  position: absolute;
+  background-color: black;
 }
