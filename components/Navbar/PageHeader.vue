@@ -1,8 +1,9 @@
 <template>
   <nav class="navbar">
-    <NavbarBars />
+    <!-- <NavbarBars />
     <NavbarBrands />
-    <NavbarBookBtn />
+    <NavbarBookBtn /> -->
+    <NavbarMenu />
   </nav>
 </template>
 <style lang="scss">
