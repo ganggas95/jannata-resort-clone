@@ -1,6 +1,7 @@
 <template>
   <div>
     <LoadingIndicators :progress="progress" />
+    <NavbarPageHeader v-if="progress >= 100" />
     <!-- <slot v-else /> -->
   </div>
 </template>
