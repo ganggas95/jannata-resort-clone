@@ -11,6 +11,7 @@
   align-items: center;
   transition: all;
   transition-duration: 900ms;
+  z-index: 12;
 
   &.loading-container--hidden {
     transform: translateX(-100%);
@@ -47,6 +48,7 @@
   background-color: #d8d6e2;
   transition: all;
   transition-duration: 1450ms;
+  z-index: 11;
   &.loading-container--hidden {
     transform: translateX(-100%);
   }
