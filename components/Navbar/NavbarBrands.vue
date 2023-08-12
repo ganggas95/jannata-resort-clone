@@ -18,6 +18,7 @@ const navbarStore = useNavbarStore();
 .logo {
   width: 4.375rem;
   height: 100%;
+  user-select: none;
   transition: opacity .3s ease-in-out;
   img {
     width: 100%;

@@ -67,7 +67,7 @@ nav.navbar {
   right: 1.15rem;
   display: flex;
   flex-direction: column;
-  align-items: end;
+  align-items: flex-end;
   transition: transform 0.3s ease-in-out;
   &__hidden {
     transform: translateX(100%);

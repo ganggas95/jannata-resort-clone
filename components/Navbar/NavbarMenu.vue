@@ -1,62 +1,9 @@
 <script setup lang="ts">
 import { useNavbarStore } from "@/store/navbar-store";
+import { storeToRefs } from "pinia";
 
-const menus = ref([
-  {
-    name: "Homepage",
-    filename: "/menu/homepage.jpeg",
-  },
-  {
-    name: "Our Story",
-    filename: "/menu/OurStory.jpeg",
-  },
-  {
-    name: "Exclusive deals",
-    filename: "/menu/exclusive-deals.jpeg",
-  },
-  {
-    name: "SPA & Yoga",
-    filename: "/menu/Spa.jpeg",
-  },
-  {
-    name: "Amateras Dining",
-    filename: "/menu/amateras.jpeg",
-  },
-  {
-    name: "Wedding",
-    filename: "/menu/wedding.jpeg",
-  },
-  {
-    name: "Ubud & Beyond",
-    filename: "/menu/ubud.jpeg",
-  },
-  {
-    name: "Location & Contact",
-    filename: "/menu/location.jpeg",
-  },
-  {
-    name: "Accommodations",
-    items: [
-      {
-        name: "Pool Villa",
-        filename: "/menu/pool.jpeg",
-      },
-      {
-        name: "Deluxe Suite",
-        filename: "/menu/deluxe.jpeg",
-      },
-      {
-        name: "Superior Room",
-        filename: "/menu/superior.jpeg",
-      },
-      {
-        name: "Two Bedroom Pool Villa",
-        filename: "/menu/bedroom.jpeg",
-      },
-    ],
-  },
-]);
 const navbarStore = useNavbarStore();
+const { menus } = storeToRefs(navbarStore);
 
 const hoveredItem = ref<number | null>(null);
 const menuImages = computed(() => {
@@ -71,6 +18,10 @@ const menuImages = computed(() => {
 const onHover = (index: number) => {
   hoveredItem.value = index;
 };
+
+onMounted(() => {
+  navbarStore.getMenu();
+});
 </script>
 <template>
   <div class="navbar-content">
@@ -257,7 +208,7 @@ const onHover = (index: number) => {
         }
       }
     }
-    .navbar-screens{
+    .navbar-screens {
       max-height: 600px;
     }
   }

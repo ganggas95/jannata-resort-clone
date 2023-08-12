@@ -1,3 +1,4 @@
+@import url("https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,500;0,600;0,700;0,800;0,900;1,400;1,500;1,600;1,700;1,800;1,900&display=swap");
 html,
 body {
   margin: 0;
@@ -12,12 +13,34 @@ body {
   position: absolute;
   background-color: black;
 }
+html,
+body,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+a,
+span,
+ul,
+ol,
+li,
+strong,
+p,
+small,
+button {
+  margin: 0;
+  padding: 0;
+}
+img {
+  user-select: none;
+}
 
 button {
   outline: none;
   border: none;
 }
-
 
 body a {
   text-decoration: none;
