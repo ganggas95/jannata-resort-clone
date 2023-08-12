@@ -1,0 +1,55 @@
+[
+  {
+    "name": "Homepage",
+    "filename": "/menu/homepage.jpeg"
+  },
+  {
+    "name": "Our Story",
+    "filename": "/menu/OurStory.jpeg"
+  },
+  {
+    "name": "Exclusive deals",
+    "filename": "/menu/exclusive-deals.jpeg"
+  },
+  {
+    "name": "SPA & Yoga",
+    "filename": "/menu/Spa.jpeg"
+  },
+  {
+    "name": "Amateras Dining",
+    "filename": "/menu/amateras.jpeg"
+  },
+  {
+    "name": "Wedding",
+    "filename": "/menu/wedding.jpeg"
+  },
+  {
+    "name": "Ubud & Beyond",
+    "filename": "/menu/ubud.jpeg"
+  },
+  {
+    "name": "Location & Contact",
+    "filename": "/menu/location.jpeg"
+  },
+  {
+    "name": "Accommodations",
+    "items": [
+      {
+        "name": "Pool Villa",
+        "filename": "/menu/pool.jpeg"
+      },
+      {
+        "name": "Deluxe Suite",
+        "filename": "/menu/deluxe.jpeg"
+      },
+      {
+        "name": "Superior Room",
+        "filename": "/menu/superior.jpeg"
+      },
+      {
+        "name": "Two Bedroom Pool Villa",
+        "filename": "/menu/bedroom.jpeg"
+      }
+    ]
+  }
+]
