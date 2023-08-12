@@ -1,8 +1,16 @@
 <script lang="ts" setup>
+import { useNavbarStore } from "@/store/navbar-store";
 import logo from "@/assets/img/logo-jennata.png";
+const navbarStore = useNavbarStore();
 </script>
 <template>
-  <NuxtLink to="/" class="logo">
+  <NuxtLink
+    to="/"
+    class="logo"
+    :class="{
+      'logo--hidden': navbarStore.showNavbarContent,
+    }"
+  >
     <img :src="logo" alt="Jannata Resort and SPA" loading="lazy" />
   </NuxtLink>
 </template>
@@ -10,9 +18,17 @@ import logo from "@/assets/img/logo-jennata.png";
 .logo {
   width: 4.375rem;
   height: 100%;
+  transition: opacity .3s ease-in-out;
   img {
     width: 100%;
     height: 100%;
+  }
+  &--hidden {
+    opacity: 0;
+  }
+  @media not all and (max-width: 767px) {
+    width: 7.5rem;
+    height: auto;
   }
 }
 </style>

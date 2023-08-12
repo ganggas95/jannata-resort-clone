@@ -22,5 +22,9 @@ div.navbar-btn__bars {
     height: 0.025rem;
     background-color: #f0f0f0;
   }
+
+  @media not all and (max-width: 767px) {
+    display: none;
+  }
 }
 </style>
