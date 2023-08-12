@@ -9,5 +9,11 @@ export default defineNuxtConfig({
     assets: path.resolve(__dirname, "assets"),
     components: path.resolve(__dirname, "components"),
   },
-  modules: ["@pinia/nuxt"],
+  modules: ["@pinia/nuxt", "vue3-carousel-nuxt", "@hypernym/nuxt-gsap"],
+  plugins: [{ src: "~/plugins/locomotiveScroll.ts", mode: "client" }],
+  gsap: {
+    extraPlugins: {
+      flip: true,
+    },
+  },
 });

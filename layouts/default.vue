@@ -2,7 +2,7 @@
   <div>
     <LoadingIndicators :progress="progress" />
     <NavbarPageHeader v-if="progress >= 100" />
-    <!-- <slot v-else /> -->
+    <slot/>
   </div>
 </template>
 <script setup lang="ts">
