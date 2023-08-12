@@ -105,14 +105,6 @@ const onHover = (index: number) => {
           :index="index"
         />
       </ul>
-      <div class="menu-toggle" @click="navbarStore.toggleNavbarContent">
-        <div class="menu-toggle__bars">
-          <div class="menu-toggle__bar"></div>
-          <div class="menu-toggle__bar"></div>
-          <div class="menu-toggle__bar"></div>
-        </div>
-        <span class="menu-toggle__text">Close</span>
-      </div>
     </div>
   </div>
 </template>
@@ -130,7 +122,8 @@ const onHover = (index: number) => {
   background-color: #323037;
 
   transform: translateX(100%);
-  transition: transform 0.3s ease-in-out;
+  transition: transform 1s ease-in-out;
+  z-index: 12;
 
   &.show {
     transform: translateX(0);
@@ -138,6 +131,7 @@ const onHover = (index: number) => {
       transform: translateY(0px) !important;
     }
   }
+
   .navbar-language {
     position: absolute;
     top: 0;
@@ -192,6 +186,7 @@ const onHover = (index: number) => {
       width: 100%;
       box-sizing: border-box;
       padding-left: 1.25rem;
+      max-height: 550px;
       li {
         list-style: none;
         text-transform: uppercase;
@@ -232,66 +227,38 @@ const onHover = (index: number) => {
         }
       }
     }
-    .menu-toggle {
-      position: absolute;
-      align-items: center;
-      justify-content: center;
-      display: flex;
-      flex-direction: column;
-      z-index: 12;
-      top: -5.5rem;
-      right: 1.15rem;
-      cursor: pointer;
-      color: #fff;
-      height: 6rem;
-      width: 2rem;
-      transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  }
+  @media not all and (max-width: 767px) {
+    width: 80%;
+    transform: translateX(200%);
+    right: 0;
+    left: auto;
+    &.show {
+      transform: translateX(0);
+      right: 0;
+      left: auto;
+    }
 
-      .menu-toggle__bars {
-        position: relative;
-        display: flex;
-        row-gap: 0.45rem;
-        flex-direction: column;
-        justify-content: center;
-        align-items: center;
-        height: 2rem;
-        width: 2rem;
-
-        .menu-toggle__bar {
-          overflow: hidden;
-          display: block;
-          width: 1.5625rem;
-          height: 0.025rem;
-          background-color: #fff;
-          transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    .navbar-language {
+      right: auto !important;
+      left: 10% !important;
+    }
+    .navbar-menu {
+      padding: 0rem 10%;
+      ul {
+        display: grid;
+        grid-template-rows: repeat(8, 1fr); /* Three equal-height rows */
+        grid-template-columns: repeat(2, 1fr); /* Two equal-width columns */
+        grid-auto-flow: column;
+        grid-gap: 10px;
+        li {
+          font-size: 1.25rem;
+          font-weight: 400;
         }
       }
-      .menu-toggle__text {
-        margin-top: 1.25rem;
-        font-size: 9px;
-        line-height: 1.3;
-        font-weight: 400;
-        transform: rotate(-90deg);
-        text-transform: uppercase;
-        letter-spacing: 2px;
-        transition: transform 0.3s cubic-bezier(0.4, 0, 0.2, 1);
-      }
-
-      &:hover {
-        .menu-toggle__bars {
-          .menu-toggle__bar:not(:nth-child(2)) {
-            width: 0;
-            transform: translateX(10px);
-          }
-          .menu-toggle__bar:nth-child(2) {
-            width: 90%;
-            transform: translateX(0px);
-          }
-        }
-        .menu-toggle__text {
-          transform: rotate(-90deg) translateX(0px) translateY(10px);
-        }
-      }
+    }
+    .navbar-screens{
+      max-height: 600px;
     }
   }
 }
