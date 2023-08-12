@@ -7,9 +7,6 @@ const navbarStore = useNavbarStore();
   <NuxtLink
     to="/"
     class="logo"
-    :class="{
-      'logo--hidden': navbarStore.showNavbarContent,
-    }"
   >
     <img :src="logo" alt="Jannata Resort and SPA" loading="lazy" />
   </NuxtLink>
@@ -23,9 +20,6 @@ const navbarStore = useNavbarStore();
   img {
     width: 100%;
     height: 100%;
-  }
-  &--hidden {
-    opacity: 0;
   }
   @media not all and (max-width: 767px) {
     width: 7.5rem;

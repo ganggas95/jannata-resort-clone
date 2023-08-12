@@ -19,7 +19,7 @@ const targetStyles = computed<CSSProperties>(() => {
   <div class="carousel__item slider-item" ref="sliderItem">
     <div class="slider-item__content">
       <div class="slider-item__content-wrapper">
-        <h1>{{ item.title }}</h1>
+        <h1 v-html="item.title"></h1>
         <p>{{ item.description }}</p>
         <button class="read-more__btn">Read More</button>
       </div>

@@ -8,6 +8,9 @@ export const useHomepageStore = defineStore("homepageStore", () => {
   const heroSectionContent = computed<ComponentTypes | null>(() => {
     return components.value.length > 0 ? components.value[0] : null;
   });
+  const resortSectionContent = computed<ComponentTypes | null>(() => {
+    return components.value.length > 0 ? components.value[1] : null;
+  });
 
   const fetchHomepageContent = async () => {
     try {
@@ -20,6 +23,7 @@ export const useHomepageStore = defineStore("homepageStore", () => {
   return {
     components,
     heroSectionContent,
+    resortSectionContent,
     fetchHomepageContent,
   };
 });

@@ -1,7 +1,8 @@
 <script setup lang="ts">
 import { useNavbarStore } from "@/store/navbar-store";
 import { storeToRefs } from "pinia";
-
+import { useUiLogic } from "@/composable/useUiLogic";
+const { isMobile } = useUiLogic();
 const navbarStore = useNavbarStore();
 const { showNavbarContent } = storeToRefs(navbarStore);
 
@@ -13,7 +14,7 @@ const onClick = (event: Event) => {
   <nav
     class="navbar"
     :class="{
-      'navbar--hidden': showNavbarContent,
+      'navbar--desktop': !isMobile,
     }"
   >
     <NavbarBars @click="onClick" />
@@ -50,8 +51,8 @@ nav.navbar {
   box-sizing: border-box;
   z-index: 10;
   transition: transform 0.3s ease-in-out;
-  &.navbar--hidden {
-    transform: translateY(-100%);
+  &.navbar--desktop {
+    visibility: hidden;
   }
   @media not all and (max-width: 767px) {
     background-color: transparent;
@@ -69,6 +70,7 @@ nav.navbar {
   flex-direction: column;
   align-items: flex-end;
   transition: transform 0.3s ease-in-out;
+  box-shadow: 0 0 5px rgba(0, 0, 0, 0.125);
   &__hidden {
     transform: translateX(100%);
     right: 0;
