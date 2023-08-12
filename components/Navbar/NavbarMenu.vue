@@ -1,4 +1,6 @@
 <script setup lang="ts">
+import { useNavbarStore } from "@/store/navbar-store";
+
 const menus = ref([
   {
     name: "Homepage",
@@ -54,6 +56,8 @@ const menus = ref([
     ],
   },
 ]);
+const navbarStore = useNavbarStore();
+
 const hoveredItem = ref<number | null>(null);
 const menuImages = computed(() => {
   return menus.value.flatMap((menu) => {
@@ -70,6 +74,13 @@ const onHover = (index: number) => {
 </script>
 <template>
   <div class="navbar-content">
+    <ul class="navbar-language">
+      <li class="active">EN</li>
+      <li>FR</li>
+      <li>RU</li>
+      <li>JP</li>
+      <li>DE</li>
+    </ul>
     <div class="navbar-screens">
       <div
         class="navbar-screen__item"
@@ -94,6 +105,14 @@ const onHover = (index: number) => {
           :index="index"
         />
       </ul>
+      <div class="menu-toggle" @click="navbarStore.toggleNavbarContent">
+        <div class="menu-toggle__bars">
+          <div class="menu-toggle__bar"></div>
+          <div class="menu-toggle__bar"></div>
+          <div class="menu-toggle__bar"></div>
+        </div>
+        <span class="menu-toggle__text">Close</span>
+      </div>
     </div>
   </div>
 </template>
@@ -109,6 +128,33 @@ const onHover = (index: number) => {
   justify-content: center;
   align-items: center;
   background-color: #323037;
+
+  transform: translateX(100%);
+  transition: transform 0.3s ease-in-out;
+
+  &.show {
+    transform: translateX(0);
+    * > li {
+      transform: translateY(0px) !important;
+    }
+  }
+  .navbar-language {
+    position: absolute;
+    top: 0;
+    right: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    list-style: none;
+    gap: 8px;
+    padding: 0px 20px;
+    font-size: 12px;
+    color: #fff;
+    font-weight: 400;
+    .active {
+      color: #679334;
+    }
+  }
 
   .navbar-screens {
     position: absolute;
@@ -130,7 +176,7 @@ const onHover = (index: number) => {
     opacity: 0;
     background: no-repeat 50%;
     background-size: cover;
-    transition: opacity 0.5s cubic-bezier(0.4, 0, 0.2, 1);
+    transition: opacity 1s cubic-bezier(0.4, 0, 0.2, 1);
   }
   .navbar-screen__item.active {
     opacity: 1;
@@ -139,6 +185,7 @@ const onHover = (index: number) => {
   .navbar-menu {
     width: 100%;
     padding: 0rem 1.25rem;
+    position: relative;
     ul {
       display: flex;
       flex-direction: column;
@@ -156,7 +203,9 @@ const onHover = (index: number) => {
         cursor: pointer;
         width: 100%;
         position: relative;
-        transition: all 0.3s;
+        transition: transform 1s ease-in-out;
+        transform: translateY(100%);
+        overflow: hidden;
         &.sub-menu {
           color: #d8d6e2;
           opacity: 0.3;
@@ -180,6 +229,67 @@ const onHover = (index: number) => {
             left: -10px;
           }
           transform: translateX(10px);
+        }
+      }
+    }
+    .menu-toggle {
+      position: absolute;
+      align-items: center;
+      justify-content: center;
+      display: flex;
+      flex-direction: column;
+      z-index: 12;
+      top: -5.5rem;
+      right: 1.15rem;
+      cursor: pointer;
+      color: #fff;
+      height: 6rem;
+      width: 2rem;
+      transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+
+      .menu-toggle__bars {
+        position: relative;
+        display: flex;
+        row-gap: 0.45rem;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        height: 2rem;
+        width: 2rem;
+
+        .menu-toggle__bar {
+          overflow: hidden;
+          display: block;
+          width: 1.5625rem;
+          height: 0.025rem;
+          background-color: #fff;
+          transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+        }
+      }
+      .menu-toggle__text {
+        margin-top: 1.25rem;
+        font-size: 9px;
+        line-height: 1.3;
+        font-weight: 400;
+        transform: rotate(-90deg);
+        text-transform: uppercase;
+        letter-spacing: 2px;
+        transition: transform 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+      }
+
+      &:hover {
+        .menu-toggle__bars {
+          .menu-toggle__bar:not(:nth-child(2)) {
+            width: 0;
+            transform: translateX(10px);
+          }
+          .menu-toggle__bar:nth-child(2) {
+            width: 90%;
+            transform: translateX(0px);
+          }
+        }
+        .menu-toggle__text {
+          transform: rotate(-90deg) translateX(0px) translateY(10px);
         }
       }
     }

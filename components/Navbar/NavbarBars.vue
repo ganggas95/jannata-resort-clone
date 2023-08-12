@@ -9,9 +9,9 @@
 div.navbar-btn__bars {
   display: flex;
   flex-direction: column;
-  row-gap: 0.45rem;
   height: 100%;
   width: 2rem;
+  row-gap: 0.45rem;
   align-items: center;
   justify-content: center;
   position: relative;
