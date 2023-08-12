@@ -9,4 +9,5 @@ export default defineNuxtConfig({
     assets: path.resolve(__dirname, "assets"),
     components: path.resolve(__dirname, "components"),
   },
+  modules: ["@pinia/nuxt"],
 });
