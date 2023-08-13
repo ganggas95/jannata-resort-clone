@@ -5,7 +5,7 @@ import { useHomepageStore } from "@/store/homepage-store";
 import StayImage from "./StayImage.vue";
 import { useSectionVisibleLogic } from "@/composable/useSectionVisibleLogic";
 import { useStayImageLogic } from "@/composable/useStayImageLogic";
-import { CSSProperties } from "nuxt/dist/app/compat/capi";
+
 const homepageStore = useHomepageStore();
 const { staySectionContent } = storeToRefs(homepageStore);
 const { isSectionVisible, contentStyle } =
@@ -14,15 +14,6 @@ const { isSectionVisible, contentStyle } =
 const store = useStayImageLogic();
 const { setImageOptions, setBackgroundActive } = store;
 const { backgroundActive } = storeToRefs(store);
-
-// const containerStyles = computed<CSSProperties>(() => {
-//   return {
-//     backgroundImage: backgroundActive.value
-//       ? `url(${backgroundActive.value})`
-//       : "none",
-//     backgroundPosition: "center",
-//   };
-// });
 
 watch(
   () => [...(staySectionContent.value?.model.dataSlider || [])],

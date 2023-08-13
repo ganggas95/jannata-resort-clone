@@ -1,41 +1,14 @@
 <script setup lang="ts">
 import { useHomepageStore } from "@/store/homepage-store";
-import { useUiLogic } from "@/composable/useUiLogic";
 import { CSSProperties } from "nuxt/dist/app/compat/capi";
 import { storeToRefs } from "pinia";
-
+import { useSectionVisibleLogic } from "@/composable/useSectionVisibleLogic";
+const sectionElement = ref<HTMLElement | null>(null);
 const homepageStore = useHomepageStore();
 const { resortSectionContent } = storeToRefs(homepageStore);
-const { scrollPosition } = useUiLogic();
+const { isSectionVisible, scrollPosition } =
+  useSectionVisibleLogic(sectionElement);
 
-const isSectionVisible = ref(false);
-
-const handleScroll = (yPosition: number) => {
-  const section = document.getElementById("resort-section");
-  if (section) {
-    const rect = section.getBoundingClientRect();
-
-    // Check if the section is in the viewport
-    if (rect.top <= yPosition && rect.bottom >= yPosition) {
-      isSectionVisible.value = true;
-    } else {
-      isSectionVisible.value = false;
-    }
-  }
-};
-
-watch(
-  () => scrollPosition.value.y,
-  (value) => {
-    handleScroll(value);
-  }
-);
-
-const contentStyle = computed<CSSProperties>(() => {
-  return {
-    transform: `translateY(-${scrollPosition.value.y * 0.09}px)`,
-  };
-});
 const imageStyle = computed<CSSProperties>(() => {
   if (resortSectionContent.value?.model?.featured) {
     return {
@@ -49,11 +22,18 @@ const imageStyle = computed<CSSProperties>(() => {
   }
   return {};
 });
+
+const contentStyle = computed<CSSProperties>(() => {
+  return {
+    transform: `translateY(-${scrollPosition.value.y * 0.01}px)`,
+  };
+});
 </script>
 <template>
   <section
     class="resort-section"
     id="resort-section"
+    ref="sectionElement"
     v-if="resortSectionContent"
   >
     <div class="container">
