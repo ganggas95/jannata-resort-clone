@@ -3,6 +3,7 @@ import { useHomepageStore } from "@/store/homepage-store";
 import { useUiLogic } from "@/composable/useUiLogic";
 import { CSSProperties } from "nuxt/dist/app/compat/capi";
 import { storeToRefs } from "pinia";
+
 const homepageStore = useHomepageStore();
 const { resortSectionContent } = storeToRefs(homepageStore);
 const { scrollPosition } = useUiLogic();
@@ -164,48 +165,6 @@ const imageStyle = computed<CSSProperties>(() => {
     position: absolute;
     left: 0;
     background-image: url("/sections/resort/bg-left.png");
-  }
-}
-.slide-left {
-  animation: slideLeft 1s ease-in-out;
-}
-
-.slide-up {
-  animation: slideUp 1.5s ease-in-out;
-}
-.slide-right {
-  animation: slideRight 1s ease-in-out;
-}
-
-@keyframes slideLeft {
-  0% {
-    opacity: 0;
-    width: 0;
-    transform: translateX(-100%);
-  }
-  100% {
-    opacity: 1 !important;
-    transform: translateX(0);
-  }
-}
-@keyframes slideRight {
-  0% {
-    opacity: 0;
-    transform: translateX(100%);
-  }
-  100% {
-    opacity: 1 !important;
-    transform: translateX(0);
-  }
-}
-@keyframes slideUp {
-  0% {
-    opacity: 0;
-    transform: translateY(100%);
-  }
-  100% {
-    opacity: 1 !important;
-    transform: translateY(0);
   }
 }
 </style>
