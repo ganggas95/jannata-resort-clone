@@ -140,13 +140,13 @@
       "component_name": "ComponentThree",
       "model": {
         "title": "THE STAY",
-        "description": "<p>Stylish accommodation option at Jannata Resort &amp; Spa incorporates a choice of 16 Deluxe Suites, 2 Deluxe Family Suite and 2 Pool Villas to anticipate all of your holiday needs. All categories are the epitome of Balinese luxury with customized interiors and essential home comforts.</p><p><br></p><p>During pandemic, our resort has applied health protocols to ensure that our guests are safe. Before check-in, guests are encouraged to wash their hands and our team will check guests' body temperature.</p><p><br></p><p>All the team members of Jannata Resort maintain the cleanliness in all areas including hotel rooms, restaurant, spa, kitchen. Every 4 hours disinfectant spray and physical distancing towards our pool decks, restaurant chairs, spa outlets are applied to ensure that our resort is in hygiene circumstance.</p><p><br></p><p>Masks, face shields, hand sanitizer and also washing hands counter are fully prepared to welcome the new normal era ensuring all guests and staffs are safe and healthy.<br></p><p><br></p>",
+        "description": "<p>Stylish accommodation option at Jannata Resort &amp; Spa incorporates a choice of 16 Deluxe Suites, 2 Deluxe Family Suite and 2 Pool Villas to anticipate all of your holiday needs. All categories are the epitome of Balinese luxury with customized interiors and essential home comforts.</p>",
         "dataSlider": [
           {
-            "title": "Slider Title",
+            "title": "Superior Room",
             "link": {
-              "title": "Deluxe Suite",
-              "url": "https://jannataresort.com/en/accommodation/deluxe-suite"
+              "title": "Superior Room",
+              "url": "https://jannataresort.com/en/accommodation/superior-room"
             },
             "featured": {
               "id": "5fa4f6979dae8c603924cc4d",
@@ -157,10 +157,10 @@
               "size": 271951,
               "type": "IMG",
               "original": "deluxes-suite_home1.jpg",
-              "path": "sections/homepage/",
+              "path": "sections/stay/",
               "is_aws": true,
               "aws_file_url": "/",
-              "filename": "4.jpeg"
+              "filename": "slider-1.jpeg"
             },
             "featured_hover": {
               "id": "5fa51c299dae8c603924cc7b",
@@ -171,17 +171,17 @@
               "size": 279961,
               "type": "IMG",
               "original": "deluxes-suite_home3.jpg",
-              "path": "sections/homepage/",
+              "path": "sections/stay/",
               "is_aws": true,
               "aws_file_url": "/",
-              "filename": "4.jpeg"
+              "filename": "hover-1.jpeg"
             },
             "id": "4d4ea967-dca0-45ad-bb85-990632a9c6b5"
           },
           {
-            "title": "Slider Title",
+            "title": "Deluxe Suite",
             "link": {
-              "title": "Superior Room",
+              "title": "Deluxe Suite",
               "url": "https://jannataresort.com/en/accommodation/deluxe-twin"
             },
             "featured": {
@@ -193,10 +193,10 @@
               "size": 312847,
               "type": "IMG",
               "original": "superior-room_home2.jpg",
-              "path": "sections/homepage/",
+              "path": "sections/stay/",
               "is_aws": true,
               "aws_file_url": "/",
-              "filename": "4.jpeg"
+              "filename": "slider-2.jpeg"
             },
             "featured_hover": {
               "id": "5fa4f7979dae8c603924cc5b",
@@ -207,17 +207,17 @@
               "size": 268773,
               "type": "IMG",
               "original": "superior-room_home1.jpg",
-              "path": "sections/homepage/",
+              "path": "sections/stay/",
               "is_aws": true,
               "aws_file_url": "/",
-              "filename": "4.jpeg"
+              "filename": "hover-2.jpeg"
             },
             "id": "4d4ea967-dca0-45ad-bb85-990632a9c6b5"
           },
           {
-            "title": "Slider Title",
+            "title": "One Bedroom Pool Villa",
             "link": {
-              "title": "Pool Villa",
+              "title": "One Bedroom Pool Villa",
               "url": "https://jannataresort.com/en/accommodation/pool-villa"
             },
             "featured": {
@@ -229,10 +229,10 @@
               "size": 1760246,
               "type": "IMG",
               "original": "DJI_0593_JPG.jpg",
-              "path": "sections/homepage/",
+              "path": "sections/stay/",
               "is_aws": true,
               "aws_file_url": "/",
-              "filename": "4.jpeg"
+              "filename": "slider-3.jpeg"
             },
             "featured_hover": {
               "id": "5fa62cc69dae8c603924ccf2",
@@ -243,10 +243,46 @@
               "size": 287924,
               "type": "IMG",
               "original": "pool-villa_home2.jpg",
-              "path": "sections/homepage/",
+              "path": "sections/stay/",
               "is_aws": true,
               "aws_file_url": "/",
-              "filename": "4.jpeg"
+              "filename": "hover-3.jpeg"
+            },
+            "id": "4d4ea967-dca0-45ad-bb85-990632a9c6b5"
+          },
+          {
+            "title": "Two Bedroom Pool Villa",
+            "link": {
+              "title": "Two Bedroom Pool Villa",
+              "url": "https://jannataresort.com/en/accommodation/superior-room"
+            },
+            "featured": {
+              "id": "5edf4cbd9dae8c54fa82ddfe",
+              "created_at": "2020-06-09 08:47:57",
+              "updated_at": "2020-06-09 08:47:57",
+              "title": null,
+              "description": null,
+              "size": 1760246,
+              "type": "IMG",
+              "original": "DJI_0593_JPG.jpg",
+              "path": "sections/stay/",
+              "is_aws": true,
+              "aws_file_url": "/",
+              "filename": "slider-4.jpeg"
+            },
+            "featured_hover": {
+              "id": "5fa62cc69dae8c603924ccf2",
+              "created_at": "2020-11-07 05:12:38",
+              "updated_at": "2020-11-07 05:12:38",
+              "title": null,
+              "description": null,
+              "size": 287924,
+              "type": "IMG",
+              "original": "pool-villa_home2.jpg",
+              "path": "sections/stay/",
+              "is_aws": true,
+              "aws_file_url": "/",
+              "filename": "hover-4.jpeg"
             },
             "id": "4d4ea967-dca0-45ad-bb85-990632a9c6b5"
           }

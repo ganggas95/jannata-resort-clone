@@ -9,6 +9,7 @@
     >
       <HeroSection />
       <ResortSection />
+      <StaySection />
     </main>
   </NuxtLayout>
 </template>
