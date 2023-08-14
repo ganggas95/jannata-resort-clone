@@ -88,30 +88,6 @@ const { isMobile } = useUiLogic();
           }
         }
       }
-      button.carousel__pagination-button {
-        position: relative;
-        padding: 10px;
-        &::before {
-          content: "";
-          border-radius: 100%;
-          position: absolute;
-          top: 5px;
-          left: 5px;
-          background: transparent;
-          height: 1rem;
-          width: 1rem;
-          transition: transform 0.3s cubic-bezier(0.4, 0, 0.2, 1);
-        }
-        &::after {
-          width: 0.45rem;
-          height: 0.45rem;
-          border-radius: 100%;
-          background: #666;
-        }
-        &--active::after {
-          background: #fff;
-        }
-      }
     }
   }
 }
