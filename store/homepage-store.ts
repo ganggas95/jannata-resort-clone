@@ -20,6 +20,9 @@ export const useHomepageStore = defineStore("homepageStore", () => {
   const relaxingSectionContent = computed<ComponentTypes | null>(() => {
     return components.value.length > 0 ? components.value[4] : null;
   });
+  const testimonialSectionContent = computed<ComponentTypes | null>(() => {
+    return components.value.length > 0 ? components.value[5] : null;
+  });
 
   const fetchHomepageContent = async () => {
     try {
@@ -37,5 +40,6 @@ export const useHomepageStore = defineStore("homepageStore", () => {
     fetchHomepageContent,
     dinnerSectionContent,
     relaxingSectionContent,
+    testimonialSectionContent,
   };
 });
