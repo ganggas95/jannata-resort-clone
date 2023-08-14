@@ -333,10 +333,10 @@
           "size": 79004,
           "type": "IMG",
           "original": "6fe77037-cba3-4b76-81d0-bac03e031898.jpg",
-          "path": "sections/homepage/",
+          "path": "sections/relaxing/",
           "is_aws": true,
           "aws_file_url": "/",
-          "filename": "4.jpeg"
+          "filename": "bg.jpeg"
         },
         "link": {
           "title": "Read More",
