@@ -4,8 +4,13 @@
       :class="{
         'main-shifted': showNavbarContent,
       }"
+      data-scroll-container
+      ref="scrollElement"
     >
-      <SectionsHeroSection />
+      <HeroSection />
+      <ResortSection />
+      <StaySection />
+      <DinnerSection />
     </main>
   </NuxtLayout>
 </template>
@@ -13,6 +18,7 @@
 import { storeToRefs } from "pinia";
 import { useNavbarStore } from "@/store/navbar-store";
 import { useHomepageStore } from "@/store/homepage-store";
+import { useUiLogic } from "@/composable/useUiLogic";
 
 useHead({
   title: "Nuxt App",
@@ -25,6 +31,7 @@ definePageMeta({
 const navbarStore = useNavbarStore();
 const { showNavbarContent } = storeToRefs(navbarStore);
 const homepageStore = useHomepageStore();
+const { scrollElement } = useUiLogic();
 onMounted(() => {
   homepageStore.fetchHomepageContent();
 });

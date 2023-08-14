@@ -3,11 +3,14 @@ import { Carousel, Navigation, Pagination, Slide } from "vue3-carousel";
 import { storeToRefs } from "pinia";
 import HeroSliderItem from "./HeroSliderItem.vue";
 import { useHomepageStore } from "@/store/homepage-store";
+import { useUiLogic } from "@/composable/useUiLogic";
 const homepageStore = useHomepageStore();
 const { heroSectionContent } = storeToRefs(homepageStore);
+const { isMobile } = useUiLogic();
 </script>
 <template>
-  <section class="hero-section" id="#hero-section">
+  <section data-scroll-section class="hero-section" id="#hero-section">
+    <NavbarBrands v-if="!isMobile" />
     <Carousel v-if="heroSectionContent">
       <Slide
         v-for="(item, index) in heroSectionContent.model.dataSlider"
@@ -31,6 +34,15 @@ const { heroSectionContent } = storeToRefs(homepageStore);
   height: 100vh;
   background-repeat: no-repeat;
   background-size: cover;
+  display: flex;
+  justify-content: center;
+  .logo {
+    position: absolute;
+    top: 10rem;
+    left: auto;
+    right: auto;
+    z-index: 10;
+  }
   .carousel__slide {
     height: 100vh;
     width: 100%;

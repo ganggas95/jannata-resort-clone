@@ -8,6 +8,15 @@ export const useHomepageStore = defineStore("homepageStore", () => {
   const heroSectionContent = computed<ComponentTypes | null>(() => {
     return components.value.length > 0 ? components.value[0] : null;
   });
+  const resortSectionContent = computed<ComponentTypes | null>(() => {
+    return components.value.length > 0 ? components.value[1] : null;
+  });
+  const staySectionContent = computed<ComponentTypes | null>(() => {
+    return components.value.length > 0 ? components.value[2] : null;
+  });
+  const dinnerSectionContent = computed<ComponentTypes | null>(() => {
+    return components.value.length > 0 ? components.value[3] : null;
+  });
 
   const fetchHomepageContent = async () => {
     try {
@@ -20,6 +29,9 @@ export const useHomepageStore = defineStore("homepageStore", () => {
   return {
     components,
     heroSectionContent,
+    resortSectionContent,
+    staySectionContent,
     fetchHomepageContent,
+    dinnerSectionContent,
   };
 });

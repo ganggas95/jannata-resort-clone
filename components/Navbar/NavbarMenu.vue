@@ -92,7 +92,7 @@ onMounted(() => {
     align-items: center;
     list-style: none;
     gap: 8px;
-    padding: 0px 20px;
+    padding: 20px 20px;
     font-size: 12px;
     color: #fff;
     font-weight: 400;
@@ -205,6 +205,7 @@ onMounted(() => {
         li {
           font-size: 1.25rem;
           font-weight: 400;
+          font-family: "Playfair Display", serif;
         }
       }
     }

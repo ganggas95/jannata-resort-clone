@@ -1,7 +1,8 @@
 <script setup lang="ts">
 import { useNavbarStore } from "@/store/navbar-store";
 import { storeToRefs } from "pinia";
-
+import { useUiLogic } from "@/composable/useUiLogic";
+const { isMobile } = useUiLogic();
 const navbarStore = useNavbarStore();
 const { showNavbarContent } = storeToRefs(navbarStore);
 
@@ -13,7 +14,7 @@ const onClick = (event: Event) => {
   <nav
     class="navbar"
     :class="{
-      'navbar--hidden': showNavbarContent,
+      'navbar--desktop': !isMobile,
     }"
   >
     <NavbarBars @click="onClick" />
@@ -50,8 +51,8 @@ nav.navbar {
   box-sizing: border-box;
   z-index: 10;
   transition: transform 0.3s ease-in-out;
-  &.navbar--hidden {
-    transform: translateY(-100%);
+  &.navbar--desktop {
+    visibility: hidden;
   }
   @media not all and (max-width: 767px) {
     background-color: transparent;
@@ -94,8 +95,12 @@ nav.navbar {
 
     .navbar-action__item {
       padding: 0.75rem 0.75rem 2rem;
+      &:first-child {
+        box-shadow: -5px -5px 10px rgb(0 0 0 / 10%);
+      }
       &.btn-book__now {
         opacity: 1;
+        box-shadow: -5px 5px 10px rgb(0 0 0 / 25%);
       }
       &:hover {
         width: 3.8rem;
