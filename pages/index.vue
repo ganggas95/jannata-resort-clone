@@ -10,6 +10,7 @@
       <HeroSection />
       <ResortSection />
       <StaySection />
+      <DinnerSection />
     </main>
   </NuxtLayout>
 </template>

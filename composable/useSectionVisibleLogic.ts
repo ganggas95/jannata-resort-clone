@@ -1,39 +1,32 @@
 import { CSSProperties } from "nuxt/dist/app/compat/capi";
 import { useUiLogic } from "./useUiLogic";
 
-export const useSectionVisibleLogic = (sectionId: string) => {
+export const useSectionVisibleLogic = (element: Ref<HTMLElement | null>) => {
   const { scrollPosition } = useUiLogic();
 
   const isSectionVisible = ref(false);
 
-  const handleScroll = (yPosition: number) => {
-    const section = document.getElementById(sectionId);
-    if (section) {
-      const rect = section.getBoundingClientRect();
-
-      // Check if the section is in the viewport
-      if (rect.top <= yPosition && rect.bottom >= yPosition) {
-        isSectionVisible.value = true;
-      } else {
-        isSectionVisible.value = false;
-      }
-    }
+  const options = {
+    root: null, // use the viewport as the root
+    rootMargin: "0px",
+    threshold: 0.5, // percentage of the element visible before triggering the callback
   };
 
-  watch(
-    () => scrollPosition.value.y,
-    (value) => {
-      handleScroll(value);
-    }
-  );
+  const callback = (entries: any[]) => {
+    entries.forEach((entry) => {
+      isSectionVisible.value = entry.isIntersecting;
+    });
+  };
 
-  const contentStyle = computed<CSSProperties>(() => {
-    return {
-      transform: `translateY(-${scrollPosition.value.y * 0.01}px)`,
-    };
+  onMounted(() => {
+    if (element.value) {
+      const observer = new IntersectionObserver(callback, options);
+      observer.observe(element.value);
+    }
   });
+
   return {
-    contentStyle,
     isSectionVisible,
+    scrollPosition,
   };
 };
