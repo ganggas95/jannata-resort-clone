@@ -6,14 +6,14 @@ import StayImage from "./StayImage.vue";
 import { useSectionVisibleLogic } from "@/composable/useSectionVisibleLogic";
 import { useStayImageLogic } from "@/composable/useStayImageLogic";
 
+const sectionElement = ref<HTMLElement | null>(null);
 const homepageStore = useHomepageStore();
 const { staySectionContent } = storeToRefs(homepageStore);
-const { isSectionVisible, contentStyle } =
-  useSectionVisibleLogic("stay-section");
+const { isSectionVisible, scrollPosition } =
+  useSectionVisibleLogic(sectionElement);
 
 const store = useStayImageLogic();
 const { setImageOptions, setBackgroundActive } = store;
-const { backgroundActive } = storeToRefs(store);
 
 watch(
   () => [...(staySectionContent.value?.model.dataSlider || [])],
@@ -21,6 +21,12 @@ watch(
     setImageOptions(value);
   }
 );
+
+const contentStyle = computed(() => {
+  return {
+    transform: `translateY(-${scrollPosition.value.y * 0.01}px)`,
+  };
+});
 </script>
 
 <template>

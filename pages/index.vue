@@ -11,6 +11,7 @@
       <ResortSection />
       <StaySection />
       <DinnerSection />
+      <RelaxingSection />
     </main>
   </NuxtLayout>
 </template>
