@@ -68,13 +68,14 @@ const targetStyles = computed<CSSProperties>(() => {
       align-items: center;
       h1 {
         font-family: "Playfair Display", serif;
-        font-size: 43px;
+        font-size: 24px;
         letter-spacing: 5px;
         font-weight: 400;
       }
       p {
+        font-size: 10px;
         letter-spacing: 2px;
-        max-width: 30rem;
+        max-width: 20rem;
         text-align: center;
       }
       .read-more__btn {
@@ -113,5 +114,18 @@ const targetStyles = computed<CSSProperties>(() => {
       opacity: 0;
     }
   }
+}
+
+@media not all and (max-width: 767px) {
+.slider-item {
+  h1 {
+
+    font-size: 43px !important;
+  }
+  p {
+    font-size: 12px !important;
+    max-width: 30rem !important;
+  }
+}
 }
 </style>

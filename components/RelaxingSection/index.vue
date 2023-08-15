@@ -94,7 +94,10 @@ const sectionStyle = computed<CSSProperties>(() => {
       }
     }
   }
-  @media not all and (max-width: 767px) {
+}
+
+@media not all and (max-width: 767px) {
+  .relaxing-section {
     .relaxing-section__wrapper {
       justify-content: center;
     }

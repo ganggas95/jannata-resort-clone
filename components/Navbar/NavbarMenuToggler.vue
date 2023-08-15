@@ -74,10 +74,12 @@ const navbarStore = useNavbarStore();
       transform: rotate(-90deg) translateX(0px) translateY(10px);
     }
   }
+}
+/* Styles for non-mobile devices */
+@media not all and (max-width: 767px) {
   /* Styles for non-mobile devices */
-  @media not all and (max-width: 767px) {
-    /* Styles for non-mobile devices */
-    /* Add your styles here */
+  /* Add your styles here */
+  .menu-toggle {
     background-color: #fff;
     color: #000;
     height: 5rem;

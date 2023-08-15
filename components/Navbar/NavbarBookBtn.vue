@@ -54,7 +54,10 @@
       }
     }
   }
-  @media not all and (max-width: 767px) {
+}
+
+@media not all and (max-width: 767px) {
+  .btn-book__now {
     height: 8.5rem;
     width: 3rem;
     &::after {
