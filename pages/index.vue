@@ -51,6 +51,9 @@ main {
   transition: transform 1s ease-in-out;
   overflow-y: auto;
   overflow-x: hidden;
+  &::-webkit-scrollbar {
+    display: none;
+  }
   section {
     width: 100vw;
   }
