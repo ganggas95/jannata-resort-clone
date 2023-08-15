@@ -33,7 +33,10 @@ const onClick = (event: Event) => {
     }"
   >
     <NavbarMenuToggler />
-    <NavbarBookBtn class="navbar-action__item" style="background: #5f5c68" />
+    <NavbarBookActionBtn
+      class="navbar-action__item"
+      style="background: #5f5c68"
+    />
   </div>
 </template>
 <style lang="scss">

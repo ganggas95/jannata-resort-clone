@@ -9,7 +9,7 @@ const book = reactive({
 const today = computed(() => new Date().toISOString().split("T")[0]);
 </script>
 <template>
-  <section class="form-section">
+  <section class="form-section" id="book-now">
     <div class="bg-overlay">
       <div class="container">
         <form class="form-section__content">
