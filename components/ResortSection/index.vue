@@ -112,7 +112,21 @@ const contentStyle = computed<CSSProperties>(() => {
     }
   }
 
-  @media not all and (max-width: 767px) {
+  &::before {
+    content: "";
+    height: 100%;
+    width: 20rem;
+    background-repeat: no-repeat;
+    background-size: contain;
+    top: -20%;
+    position: absolute;
+    left: 0;
+    background-image: url("/sections/resort/bg-left.png");
+  }
+}
+
+@media not all and (max-width: 767px) {
+  .resort-section {
     .resort-section__content {
       background-color: #d8d6e2;
       position: absolute;
@@ -133,18 +147,6 @@ const contentStyle = computed<CSSProperties>(() => {
       position: absolute;
       transition: transform 0.3s ease-in-out;
     }
-  }
-
-  &::before {
-    content: "";
-    height: 100%;
-    width: 20rem;
-    background-repeat: no-repeat;
-    background-size: contain;
-    top: -20%;
-    position: absolute;
-    left: 0;
-    background-image: url("/sections/resort/bg-left.png");
   }
 }
 </style>

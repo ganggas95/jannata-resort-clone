@@ -54,13 +54,8 @@ nav.navbar {
   &.navbar--desktop {
     visibility: hidden;
   }
-  @media not all and (max-width: 767px) {
-    background-color: transparent;
-    height: fit-content;
-    justify-content: center;
-    margin-top: 5rem;
-  }
 }
+
 .navbar-action {
   position: absolute;
   top: 20%;
@@ -82,9 +77,16 @@ nav.navbar {
       opacity: 0;
     }
   }
+}
 
-  /* Styles for non-mobile devices */
-  @media not all and (max-width: 767px) {
+@media not all and (max-width: 767px) {
+  nav.navbar {
+    background-color: transparent;
+    height: fit-content;
+    justify-content: center;
+    margin-top: 5rem;
+  }
+  .navbar-action {
     right: 0;
     top: 30%;
     &__hidden {

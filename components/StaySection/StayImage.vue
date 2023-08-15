@@ -86,12 +86,13 @@ const imageStyle = computed<CSSProperties>(() => {
         position: absolute;
         top: -5px;
         background-color: #fff;
-        transition: all .3s ease;
+        transition: all 0.3s ease;
       }
     }
   }
-
-  @media not all and (max-width: 767px) {
+}
+@media not all and (max-width: 767px) {
+  .stay-section__link {
     height: 360px;
     &:hover {
       h1.stay-section__image--content-title {
@@ -100,24 +101,24 @@ const imageStyle = computed<CSSProperties>(() => {
         }
       }
     }
-    .stay-section__image-changer {
-      width: 98%;
-      height: 100%;
-      background-color: #333107;
-      background-size: cover;
-      background-repeat: no-repeat;
-      background-position: auto 100%;
-      top: 0;
-      left: 0;
-      position: absolute;
-      transform: translateX(-105%);
-      transition: transform 0.3s ease;
+  }
+  .stay-section__image-changer {
+    width: 98%;
+    height: 100%;
+    background-color: #333107;
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: auto 100%;
+    top: 0;
+    left: 0;
+    position: absolute;
+    transform: translateX(-105%);
+    transition: transform 0.3s ease;
 
-      &.show {
-        transform: translateX(0);
-        width: 100%;
-        background-size: 400% 100%;
-      }
+    &.show {
+      transform: translateX(0);
+      width: 100%;
+      background-size: 400% 100%;
     }
   }
 }

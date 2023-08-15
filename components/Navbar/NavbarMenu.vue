@@ -179,7 +179,9 @@ onMounted(() => {
       }
     }
   }
-  @media not all and (max-width: 767px) {
+}
+@media not all and (max-width: 767px) {
+  .navbar-content {
     width: 80%;
     transform: translateX(200%);
     right: 0;

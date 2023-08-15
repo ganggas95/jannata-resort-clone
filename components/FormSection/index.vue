@@ -169,8 +169,12 @@ const today = computed(() => new Date().toISOString().split("T")[0]);
       width: 100%;
       position: relative;
     }
+  }
+}
 
-    @media not all and (max-width: 767px) {
+@media not all and (max-width: 767px) {
+  .form-section {
+    .form-section__content {
       max-width: 450px !important;
       margin-right: 10rem;
       .form-action {

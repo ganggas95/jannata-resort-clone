@@ -32,16 +32,14 @@ const contentStyle = computed(() => {
 <template>
   <section class="stay-section" id="stay-section" v-if="staySectionContent">
     <div class="container">
-      <div class="stay-section__content">
+      <div class="stay-section__content" :style="contentStyle">
         <h1
+          :class="{ 'slide-right': isSectionVisible }"
           v-html="staySectionContent.model.title"
-          :class="{ 'slide-up': isSectionVisible }"
-          :style="contentStyle"
         ></h1>
         <p
+          :class="{ 'slide-left': isSectionVisible }"
           v-html="staySectionContent.model.description"
-          :class="{ 'slide-up': isSectionVisible }"
-          :style="contentStyle"
         ></p>
       </div>
       <div class="stay-section__images">
@@ -128,8 +126,10 @@ const contentStyle = computed(() => {
     z-index: 1;
     background-image: url("/sections/stay/bg-right.png");
   }
+}
 
-  @media not all and (max-width: 767px) {
+@media not all and (max-width: 767px) {
+  .stay-section {
     .stay-section__images {
       grid-template-columns: repeat(4, 1fr);
       grid-template-rows: repeat(1, 1fr);
