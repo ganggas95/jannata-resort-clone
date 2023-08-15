@@ -23,7 +23,7 @@ const { testimonialSectionContent } = storeToRefs(store);
     </div>
   </section>
 </template>
-<style lang="scss" setup>
+<style lang="scss" scoped>
 .testimonial-section {
   height: 65vh;
   background-color: #fff;
@@ -38,15 +38,14 @@ const { testimonialSectionContent } = storeToRefs(store);
       }
     }
   }
-
-  @media not all and (max-width: 767px) {
-    section.carousel {
-      max-width: 450px;
-    }
-    .container {
-      display: flex;
-      justify-content: center;
-    }
+}
+@media not all and (max-width: 767px) {
+  section.carousel {
+    max-width: 450px;
+  }
+  .container {
+    display: flex;
+    justify-content: center;
   }
 }
 </style>

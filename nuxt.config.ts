@@ -10,5 +10,10 @@ export default defineNuxtConfig({
     components: path.resolve(__dirname, "components"),
   },
   ssr: false,
-  modules: ["@pinia/nuxt", "vue3-carousel-nuxt", "@hypernym/nuxt-gsap"],
+  modules: [
+    "@pinia/nuxt",
+    "vue3-carousel-nuxt",
+    "@hypernym/nuxt-gsap",
+    "nuxt-icon",
+  ],
 });

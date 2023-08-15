@@ -135,8 +135,10 @@ const contentStyle = computed<CSSProperties>(() => {
       background-position: center;
     }
   }
+}
 
-  @media not all and (max-width: 767px) {
+@media not all and (max-width: 767px) {
+  .dinner-section {
     .dinner-section__content {
       position: absolute;
       width: 60%;

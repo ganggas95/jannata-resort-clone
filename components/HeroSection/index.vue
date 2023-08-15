@@ -49,12 +49,13 @@ const { isMobile } = useUiLogic();
   }
 
   .slider-navigator {
+    position: relative;
     z-index: 11;
-    position: absolute;
-    right: 10rem;
-    bottom: 5rem;
     display: flex;
     column-gap: 1.5rem;
+    transform: translateY(-5rem);
+    width: 100%;
+    justify-content: center;
     button {
       position: relative !important;
       color: #fff;
@@ -73,6 +74,7 @@ const { isMobile } = useUiLogic();
     left: 10rem;
     bottom: 5rem;
     gap: 10px;
+    visibility: hidden;
     .carousel__pagination-item {
       box-sizing: border-box;
 
@@ -88,6 +90,22 @@ const { isMobile } = useUiLogic();
           }
         }
       }
+    }
+  }
+}
+
+@media not all and (max-width: 767px) {
+  .hero-section {
+    .carousel__pagination {
+      visibility: visible !important;
+    }
+    .slider-navigator {
+      position: absolute;
+      right: 10rem;
+      bottom: 5rem;
+      width: fit-content;
+      justify-content: flex-end;
+      transform: translateY(0) translateX(0);
     }
   }
 }

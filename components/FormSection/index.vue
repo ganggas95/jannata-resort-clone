@@ -9,7 +9,7 @@ const book = reactive({
 const today = computed(() => new Date().toISOString().split("T")[0]);
 </script>
 <template>
-  <section class="form-section">
+  <section class="form-section" id="book-now">
     <div class="bg-overlay">
       <div class="container">
         <form class="form-section__content">
@@ -169,8 +169,12 @@ const today = computed(() => new Date().toISOString().split("T")[0]);
       width: 100%;
       position: relative;
     }
+  }
+}
 
-    @media not all and (max-width: 767px) {
+@media not all and (max-width: 767px) {
+  .form-section {
+    .form-section__content {
       max-width: 450px !important;
       margin-right: 10rem;
       .form-action {
