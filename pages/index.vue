@@ -14,6 +14,7 @@
       <RelaxingSection />
       <TestimonialSection />
       <FormSection />
+      <FooterSection />
     </main>
   </NuxtLayout>
 </template>
