@@ -1,12 +1,12 @@
-@import url(./text-styles.scss);
-@import url(./animation-styles.scss);
+@import "./text-styles.scss";
+@import "./animation-styles.scss";
 
 button.carousel__pagination-button {
   position: relative;
   padding: 10px;
   &::before {
     content: "";
-    border-radius: 100%;
+    border-radius: 100% !important;
     position: absolute;
     top: 5px;
     left: 5px;
@@ -18,7 +18,7 @@ button.carousel__pagination-button {
   &::after {
     width: 0.45rem;
     height: 0.45rem;
-    border-radius: 100%;
+    border-radius: 100% !important;
     background: #666;
   }
   &--active::after {
