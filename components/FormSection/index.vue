@@ -1,5 +1,10 @@
 <script lang="ts" setup>
+import { useMouseInElement } from "@vueuse/core";
+import { CSSProperties } from "nuxt/dist/app/compat/capi";
 import DateInput from "./DateInput.vue";
+
+const sectionRef = ref<HTMLElement | null>(null);
+const bgRef = ref<HTMLElement | null>(null);
 const book = reactive({
   checkin: "",
   checkout: "",
@@ -7,27 +12,45 @@ const book = reactive({
   children: 1,
 });
 const today = computed(() => new Date().toISOString().split("T")[0]);
+const scroll = useMouseInElement(bgRef);
+const sectionStyle = computed<CSSProperties>(() => {
+  return {
+    transform: `translate(${scroll.y.value * 0.1}px, ${
+      scroll.x.value * 0.1
+    }px) scale(1.5, 1.5)`,
+  };
+});
 </script>
 <template>
-  <section class="form-section" id="book-now">
+  <section class="form-section" id="book-now" ref="sectionRef">
+    <div class="bg-section" ref="bgRef" :style="sectionStyle"></div>
     <div class="bg-overlay">
       <div class="container">
         <form class="form-section__content">
           <div class="form-group">
-            <DateInput
-              type="date"
-              name="checkin"
-              placeholder="Check-in"
-              v-model="book.checkin"
-              :min="today"
-            />
-            <DateInput
-              type="date"
-              name="checkin"
-              placeholder="Check-out"
-              v-model="book.checkout"
-              :min="today"
-            />
+            <div class="form-control">
+              <label for="checkin">Check-in</label>
+              <DateInput
+                type="date"
+                name="checkin"
+                id="checkin"
+                placeholder="Check-in"
+                v-model="book.checkin"
+                :min="today"
+              />
+            </div>
+
+            <div class="form-control">
+              <label for="id">Check-out</label>
+              <DateInput
+                type="date"
+                name="checkin"
+                id="checkin"
+                placeholder="Check-out"
+                v-model="book.checkout"
+                :min="today"
+              />
+            </div>
           </div>
           <div class="form-group__member">
             <div class="form-control">
@@ -67,11 +90,17 @@ const today = computed(() => new Date().toISOString().split("T")[0]);
 <style lang="scss" scoped>
 .form-section {
   height: 100vh;
-  background-position: center;
-  background-repeat: no-repeat;
-  background-size: cover;
-  background-image: url("/bg-form.jpeg");
-
+  position: relative;
+  overflow: hidden;
+  .bg-section {
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-image: url("/bg-form.jpeg");
+    height: 100%;
+    width: 100%;
+    position: absolute;
+  }
   .bg-overlay {
     background-color: rgba(0, 0, 0, 0.5);
     height: 100%;
@@ -92,6 +121,10 @@ const today = computed(() => new Date().toISOString().split("T")[0]);
     .form-group {
       display: flex;
       column-gap: 1rem;
+      width: 100%;
+      .form-control {
+        width: 50%;
+      }
     }
     .form-group__member {
       display: flex;
@@ -111,6 +144,7 @@ const today = computed(() => new Date().toISOString().split("T")[0]);
         text-transform: uppercase;
         letter-spacing: 1px;
         font-size: 12px;
+        margin-bottom: 4px;
       }
     }
     button.form-book__btn {

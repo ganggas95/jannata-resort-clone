@@ -4,8 +4,22 @@ import { useParallax } from "@vueuse/core";
 import { CSSProperties } from "nuxt/dist/app/compat/capi";
 defineProps<{ item: DataSliderTypes }>();
 const sliderItem = ref<HTMLDivElement | null>(null);
+const buttonRef = ref<HTMLButtonElement | null>(null);
 
+const isBtnHovered = ref(false);
 const parallax = useParallax(sliderItem);
+const mouseParallax = useParallax(buttonRef);
+const buttonStyle = computed<CSSProperties>(() => {
+  if (!isBtnHovered.value)
+    return {
+      transform: "translate3d(0px, 0px, 0px)",
+    };
+  return {
+    transform: `translate3d(${mouseParallax.roll.value * 10}px, ${
+      mouseParallax.tilt.value * 10
+    }px, 0px)`,
+  };
+});
 const targetStyles = computed<CSSProperties>(() => {
   return {
     transform: `translate3d(${parallax.tilt.value * 50}px, ${
@@ -14,6 +28,12 @@ const targetStyles = computed<CSSProperties>(() => {
     width: "100%",
   };
 });
+const mouseEnter = () => {
+  isBtnHovered.value = true;
+};
+const mouseLeave = () => {
+  isBtnHovered.value = false;
+};
 </script>
 <template>
   <div class="carousel__item slider-item" ref="sliderItem">
@@ -21,7 +41,15 @@ const targetStyles = computed<CSSProperties>(() => {
       <div class="slider-item__content-wrapper">
         <h1 v-html="item.title"></h1>
         <p>{{ item.description }}</p>
-        <button class="read-more__btn">Read More</button>
+        <button
+          class="read-more__btn"
+          ref="buttonRef"
+          :style="buttonStyle"
+          @mouseenter="mouseEnter"
+          @mouseleave="mouseLeave"
+        >
+          Read More
+        </button>
       </div>
     </div>
   </div>
@@ -82,10 +110,17 @@ const targetStyles = computed<CSSProperties>(() => {
         color: #fff;
         border: 1px solid #fff;
         text-transform: uppercase;
-        letter-spacing: 0.125rem;
         background: transparent;
-        padding: 1rem 2rem;
         max-width: fit-content;
+        font-size: 11px !important;
+        line-height: 1.3 !important;
+        letter-spacing: 2px;
+        padding: 10px 30px !important;
+
+        &:hover {
+          background-color: #fff;
+          color: #000;
+        }
       }
     }
   }
@@ -117,15 +152,14 @@ const targetStyles = computed<CSSProperties>(() => {
 }
 
 @media not all and (max-width: 767px) {
-.slider-item {
-  h1 {
-
-    font-size: 43px !important;
+  .slider-item {
+    h1 {
+      font-size: 43px !important;
+    }
+    p {
+      font-size: 12px !important;
+      max-width: 30rem !important;
+    }
   }
-  p {
-    font-size: 12px !important;
-    max-width: 30rem !important;
-  }
-}
 }
 </style>
