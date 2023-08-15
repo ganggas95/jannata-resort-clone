@@ -13,6 +13,7 @@
       <DinnerSection />
       <RelaxingSection />
       <TestimonialSection />
+      <FormSection />
     </main>
   </NuxtLayout>
 </template>
