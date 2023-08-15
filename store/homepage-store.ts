@@ -24,6 +24,7 @@ export const useHomepageStore = defineStore("homepageStore", () => {
     return components.value.length > 0 ? components.value[5] : null;
   });
 
+
   const fetchHomepageContent = async () => {
     try {
       const { data: response } = await homepageService.getHomepageContent();
