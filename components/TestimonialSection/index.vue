@@ -25,10 +25,9 @@ const { testimonialSectionContent } = storeToRefs(store);
 </template>
 <style lang="scss" scoped>
 .testimonial-section {
-  height: 65vh;
+  height: fit-content;
   background-color: #fff;
   padding: 10rem 0rem;
-  box-sizing: border-box;
   .container {
     box-sizing: border-box;
     section.carousel {
@@ -40,6 +39,11 @@ const { testimonialSectionContent } = storeToRefs(store);
   }
 }
 @media not all and (max-width: 767px) {
+.testimonial-section {
+  height: 65vh ;
+
+  padding: 5rem 0rem;
+  }
   section.carousel {
     max-width: 450px;
   }

@@ -59,8 +59,8 @@ const sectionStyle = computed<CSSProperties>(() => {
     height: 100%;
     width: 100%;
     display: flex;
-    justify-content: flex-end;
     align-items: center;
+    justify-content: center;
   }
 
   .relaxing-section__content {
@@ -68,7 +68,6 @@ const sectionStyle = computed<CSSProperties>(() => {
     display: flex;
     flex-direction: column;
     row-gap: 2rem;
-    margin-right: 4rem;
     justify-content: flex-start;
     h1 {
       color: #fff;
@@ -101,6 +100,10 @@ const sectionStyle = computed<CSSProperties>(() => {
     .relaxing-section__wrapper {
       justify-content: center;
     }
+  }
+  .relaxing-section__content {
+
+    margin-right: 4rem;
   }
 }
 </style>
