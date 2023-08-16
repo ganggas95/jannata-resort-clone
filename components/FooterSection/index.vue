@@ -46,8 +46,8 @@ footer {
   padding: 100px 0px 90px 0px;
   color: #fff;
   .container {
-    padding-left: 50px !important;
-    padding-right: 50px !important;
+    padding-left: 24px !important;
+    padding-right: 24px !important;
     max-width: 100%;
   }
   .additional-info {
@@ -68,12 +68,12 @@ footer {
         font-size: 20px;
         justify-self: center;
         position: relative;
-        width: 180px;
+        width: 120px;
         &::after {
           content: "";
           left: 36px;
           position: absolute;
-          width: 150px;
+          width: 90px;
           top: 45%;
           background-color: #fff;
           height: 2px;
@@ -132,6 +132,8 @@ footer {
       row-gap: 3rem;
       column-gap: 4rem;
       align-content: start;
+      padding-left: 50 !important;
+      padding-right: 50 !important;
     }
     .address-info {
       margin-top: 0px;
@@ -139,6 +141,12 @@ footer {
     }
     .social-media {
       margin-top: 0px !important;
+    }
+    .time-format {
+      width: 180px !important;
+      &::after {
+        width: 150px !important;
+      }
     }
   }
 }
