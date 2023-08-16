@@ -68,7 +68,7 @@ const contentStyle = computed<CSSProperties>(() => {
 </template>
 <style lang="scss">
 .resort-section {
-  height: 80vh;
+  height: fit-content;
   background: #fff;
   position: relative;
   padding: 50px 0px;
@@ -127,6 +127,7 @@ const contentStyle = computed<CSSProperties>(() => {
 
 @media not all and (max-width: 767px) {
   .resort-section {
+    height: 80vh;
     .resort-section__content {
       background-color: #d8d6e2;
       position: absolute;

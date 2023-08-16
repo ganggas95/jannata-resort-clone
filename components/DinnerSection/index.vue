@@ -92,7 +92,6 @@ const contentStyle = computed<CSSProperties>(() => {
     z-index: 10;
     box-sizing: border-box;
     top: 1rem;
-    left: 25%;
     background-color: #fff;
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
     padding: 3rem;
