@@ -6,7 +6,9 @@
     "dev": "nuxt dev",
     "generate": "nuxt generate",
     "preview": "nuxt preview",
-    "postinstall": "nuxt prepare"
+    "postinstall": "nuxt prepare",
+    "test": "vitest --run --reporter verbose --globals",
+    "test:watch": "vitest --watch --reporter verbose --globals"
   },
   "devDependencies": {
     "@hypernym/nuxt-gsap": "^2.2.2",
@@ -15,7 +17,8 @@
     "@types/node": "^18.17.3",
     "locomotive-scroll": "^4.1.4",
     "nuxt": "^3.6.5",
-    "nuxt-icon": "^0.5.0"
+    "nuxt-icon": "^0.5.0",
+    "vitest": "^0.34.2"
   },
   "dependencies": {
     "@pinia/nuxt": "^0.4.11",
