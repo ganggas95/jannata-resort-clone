@@ -52,9 +52,9 @@ const contentStyle = computed<CSSProperties>(() => {
           :style="contentStyle"
         ></p>
         <div :class="{ 'slide-up': isSectionVisible }" :style="contentStyle">
-          <button class="read-more__btn--section">
-            {{ resortSectionContent.model.link?.title || "Read more" }}
-          </button>
+          <ReadMoreBtn :class="{ 'slide-up': isSectionVisible }"
+            >{{ resortSectionContent.model.link?.title || "Read more" }}Ï
+          </ReadMoreBtn>
         </div>
       </div>
       <div
@@ -69,7 +69,7 @@ const contentStyle = computed<CSSProperties>(() => {
 <style lang="scss">
 .resort-section {
   height: fit-content;
-  background: #fff;
+  background: var(--white-color);
   position: relative;
   padding: 50px 0px;
   .container {
@@ -129,7 +129,7 @@ const contentStyle = computed<CSSProperties>(() => {
   .resort-section {
     height: 80vh;
     .resort-section__content {
-      background-color: #d8d6e2;
+      background-color: var(--gray-light-color);
       position: absolute;
       max-width: 60%;
       right: 10%;

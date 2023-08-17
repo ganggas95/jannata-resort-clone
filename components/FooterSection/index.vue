@@ -42,9 +42,9 @@
 </template>
 <style lang="scss" scoped>
 footer {
-  background: linear-gradient(0deg, #679334, #bbd531);
+  background: linear-gradient(0deg, var(--secondary-color), var(--green-light-color));
   padding: 100px 0px 90px 0px;
-  color: #fff;
+  color: var(--white-color);
   .container {
     padding-left: 24px !important;
     padding-right: 24px !important;
@@ -75,7 +75,7 @@ footer {
           position: absolute;
           width: 90px;
           top: 45%;
-          background-color: #fff;
+          background-color: var(--white-color);
           height: 2px;
         }
       }

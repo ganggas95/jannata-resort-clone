@@ -1,7 +1,12 @@
-import { CSSProperties } from "nuxt/dist/app/compat/capi";
 import { useUiLogic } from "./useUiLogic";
 
 export const useSectionVisibleLogic = (element: Ref<HTMLElement | null>) => {
+  /**
+   * Generates a hook that handle section visibility logic.
+   *
+   * @param {Ref<HTMLElement | null>} element - The element reference.
+   * @return {Object} An object containing the `isSectionVisible` and `scrollPosition` properties.
+   */
   const { scrollPosition } = useUiLogic();
 
   const isSectionVisible = ref(false);
@@ -13,6 +18,11 @@ export const useSectionVisibleLogic = (element: Ref<HTMLElement | null>) => {
   };
 
   const callback = (entries: any[]) => {
+    /**
+     * A function callback that processes an array of entries.
+     *
+     * @param {any[]} entries - An array of entries to be processed.
+     */
     entries.forEach((entry) => {
       isSectionVisible.value = entry.isIntersecting;
     });

@@ -47,7 +47,7 @@ nav.navbar {
   align-items: center;
   top: 0;
   left: 0;
-  background-color: #323037;
+  background-color: var(--gray-dark-color); ;
   width: 100%;
   height: 5rem;
   padding: 1rem 2rem;
@@ -110,7 +110,7 @@ nav.navbar {
       &:hover {
         width: 3.8rem;
         &.btn-book__now {
-          background-color: #679334 !important;
+          background-color: var(--secondary-color) !important;
           .book-now__bar {
             &:first-child {
               width: 2rem;

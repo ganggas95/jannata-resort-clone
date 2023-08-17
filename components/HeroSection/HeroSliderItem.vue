@@ -77,14 +77,14 @@ const mouseLeave = () => {
   box-sizing: border-box;
 
   .slider-item__content {
-    color: #fff !important;
+    color: var(--white-color) !important;
     width: 100%;
     height: 100%;
     display: flex;
     flex-direction: column;
     justify-content: flex-end;
     align-items: center;
-    background: rgba(0, 0, 0, 0.5);
+    background: var(--overlay-color);
     padding-bottom: 10rem;
     z-index: 2;
 
@@ -107,8 +107,8 @@ const mouseLeave = () => {
         text-align: center;
       }
       .read-more__btn {
-        color: #fff;
-        border: 1px solid #fff;
+        color: var(--white-color);
+        border: 1px solid var(--white-color);
         text-transform: uppercase;
         background: transparent;
         max-width: fit-content;
@@ -118,8 +118,8 @@ const mouseLeave = () => {
         padding: 10px 30px !important;
 
         &:hover {
-          background-color: #fff;
-          color: #000;
+          background-color: var(--white-color);
+          color: var(--black-color);
         }
       }
     }

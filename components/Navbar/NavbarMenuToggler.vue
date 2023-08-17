@@ -23,7 +23,7 @@ const navbarStore = useNavbarStore();
   display: flex;
   flex-direction: column;
   cursor: pointer;
-  color: #fff;
+  color: var(--white-color);
   height: 6rem;
   width: 2rem;
 
@@ -43,7 +43,7 @@ const navbarStore = useNavbarStore();
       display: block;
       width: 1.5625rem;
       height: 0.025rem;
-      background-color: #fff;
+      background-color: var(--white-color);
       transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
     }
   }
@@ -80,12 +80,12 @@ const navbarStore = useNavbarStore();
   /* Styles for non-mobile devices */
   /* Add your styles here */
   .menu-toggle {
-    background-color: #fff;
-    color: #000;
+    background-color: var(--white-color);
+    color: var(--black-color);
     height: 5rem;
     width: 3rem;
     .menu-toggle__bar {
-      background-color: #000 !important;
+      background-color: var(--black-color) !important;
     }
     &::after {
       content: "Menu" !important;

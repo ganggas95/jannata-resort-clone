@@ -80,7 +80,7 @@ const toggleCalendar = () => {
   width: 100%;
   height: 100%;
   position: relative;
-  border: 1px solid #679334;
+  border: 1px solid var(--secondary-color);
   padding: 15px;
   box-sizing: border-box;
   input {
@@ -89,14 +89,14 @@ const toggleCalendar = () => {
     border: none;
     outline: none;
     background-color: transparent;
-    color: #679334;
+    color: var(--secondary-color);
     letter-spacing: 1px;
     text-align: center;
   }
   span.input-addon {
     width: 20px;
     position: absolute;
-    color: #fff;
+    color: var(--white-color);
     font-size: 20px;
     cursor: pointer;
     user-select: none;
@@ -111,33 +111,5 @@ const toggleCalendar = () => {
       right: 10% !important;
     }
   }
-}
-input[type="date"]::-webkit-calendar-picker-indicator {
-  display: none;
-}
-
-/* For Firefox */
-input[type="date"] {
-  -moz-appearance: none;
-}
-
-/* For Edge */
-input[type="date"]::-ms-clear {
-  display: none;
-}
-input[type="number"]::-webkit-inner-spin-button,
-input[type="number"]::-webkit-outer-spin-button {
-  -webkit-appearance: none;
-  margin: 0;
-}
-
-input[type="number"] {
-  -moz-appearance: textfield;
-}
-
-input[type="number"]::-moz-number-spinbox,
-input[type="number"]::-moz-number-spin-up,
-input[type="number"]::-moz-number-spin-down {
-  display: none;
 }
 </style>

@@ -1,12 +1,12 @@
 <script setup lang="ts">
 import { CSSProperties } from "nuxt/dist/app/compat/capi";
 import { DataSliderTypes } from "@/types/homepage.types";
-import { useStayImageLogic } from "@/composable/useStayImageLogic";
+import { useSingelSliderImageLogic } from "@/composable/useStayImageLogic";
 import { mergeAwsImagePath } from "@/utils/image-utils";
 import { storeToRefs } from "pinia";
 
 const props = defineProps<{ sliderItem: DataSliderTypes; index: number }>();
-const store = useStayImageLogic();
+const store = useSingelSliderImageLogic();
 const { backgroundActive, indexState } = storeToRefs(store);
 const backgroundImage = computed(() => {
   return mergeAwsImagePath(props.sliderItem.featured);
@@ -61,14 +61,14 @@ const imageStyle = computed<CSSProperties>(() => {
   }
   .stay-section__image--content {
     position: absolute;
-    background-color: rgba(0, 0, 0, 0.5);
+    background-color: var(--overlay-color);
     width: 100%;
     height: 100%;
     left: 0;
     top: 0;
 
     h1.stay-section__image--content-title {
-      color: #fff;
+      color: var(--white-color);
       font-size: 11px;
       letter-spacing: 2px;
       line-height: 30px;
@@ -85,7 +85,7 @@ const imageStyle = computed<CSSProperties>(() => {
         height: 1px;
         position: absolute;
         top: -5px;
-        background-color: #fff;
+        background-color: var(--white-color);
         transition: all 0.3s ease;
       }
     }
@@ -105,7 +105,7 @@ const imageStyle = computed<CSSProperties>(() => {
   .stay-section__image-changer {
     width: 98%;
     height: 100%;
-    background-color: #333107;
+    background-color: var(--yellow-dark-color);
     background-size: cover;
     background-repeat: no-repeat;
     background-position: auto 100%;

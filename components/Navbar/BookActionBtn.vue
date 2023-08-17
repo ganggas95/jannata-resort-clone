@@ -18,7 +18,7 @@
   height: 8.5rem;
   width: 3rem;
   &::after {
-    color: #fff;
+    color: var(--white-color);
     text-transform: uppercase;
     letter-spacing: 0.125rem;
     content: "Book Now";
@@ -34,7 +34,7 @@
     width: 35px;
     position: relative;
     .book-now__bar {
-      background-color: #fff;
+      background-color: var(--white-color);
       height: 2px;
       width: 65px;
       position: absolute;

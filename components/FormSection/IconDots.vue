@@ -22,7 +22,7 @@ span.icon-dots {
     border-radius: 50%;
     height: 5px;
     width: 5px;
-    background-color: #fff;
+    background-color: var(--white-color);
   }
 }
 </style>
