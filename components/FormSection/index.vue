@@ -102,7 +102,7 @@ const sectionStyle = computed<CSSProperties>(() => {
     position: absolute;
   }
   .bg-overlay {
-    background-color: rgba(0, 0, 0, 0.5);
+    background-color: var(--overlay-color);
     height: 100%;
     width: 100%;
     position: absolute;
@@ -140,7 +140,7 @@ const sectionStyle = computed<CSSProperties>(() => {
       row-gap: 1px;
       flex-direction: column;
       label {
-        color: #fff;
+        color: var(--white-color);
         text-transform: uppercase;
         letter-spacing: 1px;
         font-size: 12px;
@@ -148,8 +148,8 @@ const sectionStyle = computed<CSSProperties>(() => {
       }
     }
     button.form-book__btn {
-      background-color: #679334;
-      color: #fff;
+      background-color: var(--secondary-color);
+      color: var(--white-color);
       padding: 14px 15px;
       font-size: 12px;
       letter-spacing: 1px;
@@ -157,12 +157,12 @@ const sectionStyle = computed<CSSProperties>(() => {
       box-sizing: border-box;
       margin-top: 1rem;
       &:hover {
-        background-color: #fff;
-        color: #679334;
+        background-color: var(--white-color);
+        color: var(--secondary-color);
       }
     }
     a.form-discover__link {
-      color: #fff;
+      color: var(--white-color);
       padding: 14px 15px;
       font-size: 12px;
       letter-spacing: 1px;
@@ -178,7 +178,7 @@ const sectionStyle = computed<CSSProperties>(() => {
       &::after {
         content: "";
         width: 0;
-        background-color: #679334;
+        background-color: var(--secondary-color);
         height: 1px;
         transition: transform 0.3s ease-in-out;
         position: absolute;
@@ -189,7 +189,7 @@ const sectionStyle = computed<CSSProperties>(() => {
       }
 
       &:hover {
-        color: #679334;
+        color: var(--secondary-color);
         &::after {
           width: 100%;
           transform: translateX(0);

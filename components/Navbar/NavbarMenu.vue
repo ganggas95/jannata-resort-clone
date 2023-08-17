@@ -94,10 +94,10 @@ onMounted(() => {
     gap: 8px;
     padding: 20px 20px;
     font-size: 12px;
-    color: #fff;
+    color: var(--white-color);
     font-weight: 400;
     .active {
-      color: #679334;
+      color: var(--secondary-color);
     }
   }
 
@@ -107,7 +107,7 @@ onMounted(() => {
     top: 50%;
     height: 60%;
     width: 70%;
-    background-color: #0000001a;
+    background-color: var(--black-transparent-color);
     transform: translateX(-50%) translateY(-50%);
     max-height: 500px;
   }
@@ -145,7 +145,7 @@ onMounted(() => {
         font-weight: 700;
         font-size: 0.875rem;
         line-height: 2.5;
-        color: #d8d6e2;
+        color: var(--gray-light-color);
         cursor: pointer;
         width: 100%;
         position: relative;
@@ -153,7 +153,7 @@ onMounted(() => {
         transform: translateY(100%);
         overflow: hidden;
         &.sub-menu {
-          color: #d8d6e2;
+          color: var(--gray-light-color);;
           opacity: 0.3;
           font-weight: 400;
           letter-spacing: 2px;
@@ -162,7 +162,7 @@ onMounted(() => {
         &::before {
           content: "";
           width: 0;
-          background-color: #679334;
+          background-color: var(--secondary-color);
           height: 2px;
           transition: all 0.3s;
           position: absolute;

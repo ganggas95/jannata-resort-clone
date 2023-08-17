@@ -4,7 +4,7 @@ import { storeToRefs } from "pinia";
 import { useHomepageStore } from "@/store/homepage-store";
 import StayImage from "./StayImage.vue";
 import { useSectionVisibleLogic } from "@/composable/useSectionVisibleLogic";
-import { useStayImageLogic } from "@/composable/useStayImageLogic";
+import { useSingelSliderImageLogic } from "@/composable/useStayImageLogic";
 
 const sectionElement = ref<HTMLElement | null>(null);
 const homepageStore = useHomepageStore();
@@ -12,7 +12,7 @@ const { staySectionContent } = storeToRefs(homepageStore);
 const { isSectionVisible, scrollPosition } =
   useSectionVisibleLogic(sectionElement);
 
-const store = useStayImageLogic();
+const store = useSingelSliderImageLogic();
 const { setImageOptions, setBackgroundActive } = store;
 
 watch(
@@ -58,10 +58,10 @@ const contentStyle = computed(() => {
 <style lang="scss" scoped>
 .stay-section {
   height: fit-content;
-  background: #5f5c68;
+  background: var(--primary-color);
   position: relative;
   padding: 50px 0px;
-  color: #fff;
+  color: var(--white-color);
   overflow: hidden;
   .container {
     padding-top: 100px;

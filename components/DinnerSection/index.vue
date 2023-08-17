@@ -53,9 +53,9 @@ const contentStyle = computed<CSSProperties>(() => {
           :class="{ 'slide-up': isSectionVisible }"
         ></p>
         <div :class="{ 'slide-up': isSectionVisible }">
-          <button class="read-more__btn--section">
+          <ReadMoreBtn>
             {{ dinnerSectionContent.model.link?.title || "Read more" }}
-          </button>
+          </ReadMoreBtn>
         </div>
       </div>
       <div
@@ -71,10 +71,10 @@ const contentStyle = computed<CSSProperties>(() => {
 <style lang="scss" scoped>
 .dinner-section {
   height: 70vh;
-  background: #fff;
+  background: var(--white-color);
   position: relative;
   padding: 50px 0px;
-  color: #5f5c68;
+  color: var(--primary-color);
   overflow: hidden;
   .container {
     padding-top: 20px;
@@ -92,8 +92,8 @@ const contentStyle = computed<CSSProperties>(() => {
     z-index: 10;
     box-sizing: border-box;
     top: 1rem;
-    background-color: #fff;
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    background-color: var(--white-color);
+    box-shadow: 0 0 10px var(--overlay-color);
     padding: 3rem;
     box-sizing: border-box;
     h1 {
@@ -107,7 +107,7 @@ const contentStyle = computed<CSSProperties>(() => {
       flex-direction: column;
 
       span:nth-child(2) {
-        color: #679334;
+        color: var(--secondary-color);
       }
     }
 

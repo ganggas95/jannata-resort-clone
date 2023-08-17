@@ -7,6 +7,7 @@ import { useUiLogic } from "@/composable/useUiLogic";
 const homepageStore = useHomepageStore();
 const { heroSectionContent } = storeToRefs(homepageStore);
 const { isMobile } = useUiLogic();
+
 </script>
 <template>
   <section data-scroll-section class="hero-section" id="#hero-section">
@@ -58,11 +59,11 @@ const { isMobile } = useUiLogic();
     justify-content: center;
     button {
       position: relative !important;
-      color: #fff;
+      color: var(--white-color);
       border-radius: 100%;
       transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
       &:not(.carousel__prev--disabled, .carousel__next--disabled):hover {
-        border: 1px solid #fff;
+        border: 1px solid var(--white-color);
         border-radius: 100%;
         transform: scale(1.7) translateY(-10px);
       }
@@ -82,10 +83,10 @@ const { isMobile } = useUiLogic();
         button.carousel__pagination-button {
           &::before {
             transform: scale(1.7) translateY(0px);
-            border: 1px solid #fff;
+            border: 1px solid var(--white-color);
           }
           &::after {
-            background: #fff;
+            background: var(--white-color);
             transform: scale(1) translateY(0px);
           }
         }

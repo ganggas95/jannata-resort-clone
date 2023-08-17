@@ -26,7 +26,7 @@ const { testimonialSectionContent } = storeToRefs(store);
 <style lang="scss" scoped>
 .testimonial-section {
   height: fit-content;
-  background-color: #fff;
+  background-color: var(--white-color);
   padding: 10rem 0rem;
   .container {
     box-sizing: border-box;

@@ -35,12 +35,9 @@ const sectionStyle = computed<CSSProperties>(() => {
           {{ relaxingSectionContent?.model.description }}
         </p>
         <div>
-          <button
-            class="read-more__btn--section"
-            :class="{ 'slide-up': isSectionVisible }"
-          >
-            {{ relaxingSectionContent?.model.link?.title || "Read more" }}
-          </button>
+          <ReadMoreBtn :class="{ 'slide-up': isSectionVisible }"
+            >{{ relaxingSectionContent?.model.link?.title || "Read more" }}
+          </ReadMoreBtn>
         </div>
       </div>
     </div>
@@ -55,7 +52,7 @@ const sectionStyle = computed<CSSProperties>(() => {
   display: flex;
   justify-content: center;
   .relaxing-section__wrapper {
-    background-color: rgba(0, 0, 0, 0.5);
+    background-color: var(--overlay-color);
     height: 100%;
     width: 100%;
     display: flex;
@@ -69,8 +66,8 @@ const sectionStyle = computed<CSSProperties>(() => {
     flex-direction: column;
     row-gap: 2rem;
     justify-content: flex-start;
+    color: var(--white-color);
     h1 {
-      color: #fff;
       font-size: 35px;
       font-weight: 400;
       letter-spacing: 2px;
@@ -78,7 +75,6 @@ const sectionStyle = computed<CSSProperties>(() => {
       font-family: "Playfair Display", serif;
     }
     p {
-      color: #fff;
       line-height: 1.25rem;
       font-size: 12px;
       font-family: "Open Sans", serif;
@@ -86,10 +82,8 @@ const sectionStyle = computed<CSSProperties>(() => {
       margin-top: 2rem;
     }
     .read-more__btn--section {
-      color: #fff;
-
       &:hover {
-        color: #679334;
+        color: var(--secondary-color);
       }
     }
   }
@@ -102,7 +96,6 @@ const sectionStyle = computed<CSSProperties>(() => {
     }
   }
   .relaxing-section__content {
-
     margin-right: 4rem;
   }
 }

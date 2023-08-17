@@ -20,7 +20,7 @@ div.navbar-btn__bars {
   > div {
     width: 1.5625rem;
     height: 0.025rem;
-    background-color: #f0f0f0;
+    background-color: var(--white-color);
   }
 
   @media not all and (max-width: 767px) {

@@ -7,7 +7,7 @@
   display: flex;
   flex-direction: column;
   align-items: center;
-  color: #fff;
+  color: var(--white-color);
   text-transform: uppercase;
   letter-spacing: 0.125rem;
   font-weight: 400;

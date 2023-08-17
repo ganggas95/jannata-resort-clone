@@ -1,3 +1,19 @@
+:root {
+  scroll-behavior: smooth;
+  font-family: "Open Sans", sans-serif;
+  --primary-color: #5f5c68;
+  --secondary-color: #679334;
+  --green-light-color: #333107;
+  --gray-color: #5f5c68;
+  --gray-dark-color: #323037;
+  --gray-light-color: #d8d6e2;
+  --white-color: #fff;
+  --black-color: #000;
+  --black-transparent-color: #000;
+  --overlay-color: rgba(0, 0, 0, 0.5);
+  --yellow-dark-color: #333107;
+}
+
 @import url("https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300;0,400;0,500;0,600;0,700;0,800;1,300;1,400;1,500;1,600;1,700;1,800&family=Playfair+Display:ital,wght@0,400;0,500;0,600;0,700;0,800;0,900;1,400;1,500;1,600;1,700;1,800;1,900&display=swap");
 html,
 body {
@@ -5,13 +21,12 @@ body {
   padding: 0;
   box-sizing: border-box;
   font-family: "Open Sans", sans-serif;
-  color: #5f5c68;
+  color: var(--primary-color);
   font-weight: 400;
   overflow: hidden;
   height: 100%;
   width: 100%;
   position: absolute;
-  background-color: black;
   -webkit-text-size-adjust: 100%;
   -webkit-font-smoothing: antialiased;
 }
@@ -56,32 +71,41 @@ body a {
   box-sizing: border-box;
   width: 100%;
   position: relative;
-  /* Styles for screens with a maximum width of 600px */
-  @media only screen and (max-width: 300px) {
+}
+
+/* Styles for screens with a maximum width of 600px */
+@media only screen and (max-width: 300px) {
+  .container {
     /* Add your CSS styles here */
     padding-left: 12px;
     padding-right: 12px;
     max-width: 400px;
   }
+}
 
-  /* Styles for screens with a maximum width of 600px */
-  @media only screen and (max-width: 600px) {
+/* Styles for screens with a maximum width of 600px */
+@media only screen and (max-width: 600px) {
+  .container {
     /* Add your CSS styles here */
     padding-left: 24px;
     padding-right: 24px;
     max-width: 400px;
   }
+}
 
-  /* Styles for screens with a minimum width of 601px and a maximum width of 1024px */
-  @media only screen and (min-width: 601px) and (max-width: 1024px) {
+/* Styles for screens with a minimum width of 601px and a maximum width of 1024px */
+@media only screen and (min-width: 601px) and (max-width: 1024px) {
+  .container {
     /* Add your CSS styles here */
     padding-left: 48px;
     padding-right: 48px;
     max-width: 800px !important;
   }
+}
 
-  /* Styles for screens with a minimum width of 1025px */
-  @media only screen and (min-width: 1025px) {
+/* Styles for screens with a minimum width of 1025px */
+@media only screen and (min-width: 1025px) {
+  .container {
     /* Add your CSS styles here */
     padding-left: 72px;
     padding-right: 72px;
@@ -89,36 +113,33 @@ body a {
   }
 }
 
-.read-more__btn--section {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  gap: 8px;
-  outline: none;
-  border: none;
-  background-color: transparent;
-  color: #679334;
-  font-size: 10px;
-  font-weight: 300;
-  text-transform: uppercase;
-  letter-spacing: 1px;
-  padding: 20px 0px;
-  cursor: pointer;
-  position: relative;
-  overflow: hidden;
-  &::after {
-    content: "";
-    position: absolute;
-    bottom: 0;
-    transform: translateX(-100%);
-    width: 100%;
-    height: 2px;
-    background-color: #679334;
-    transition: all 0.3s cubic-bezier(1, 0, 0.2, 1);
-  }
-  &:hover {
-    &::after {
-      transform: translateX(0%);
-    }
-  }
+/* Input style overrides */
+
+input[type="date"]::-webkit-calendar-picker-indicator {
+  display: none;
+}
+
+/* For Firefox */
+input[type="date"] {
+  -moz-appearance: none;
+}
+
+/* For Edge */
+input[type="date"]::-ms-clear {
+  display: none;
+}
+input[type="number"]::-webkit-inner-spin-button,
+input[type="number"]::-webkit-outer-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+
+input[type="number"] {
+  -moz-appearance: textfield;
+}
+
+input[type="number"]::-moz-number-spinbox,
+input[type="number"]::-moz-number-spin-up,
+input[type="number"]::-moz-number-spin-down {
+  display: none;
 }
