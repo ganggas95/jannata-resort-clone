@@ -25,7 +25,15 @@ import { useHomepageStore } from "@/store/homepage-store";
 import { useUiLogic } from "@/composable/useUiLogic";
 
 useHead({
-  title: "Nuxt App",
+  title: "Jannata Resort and SPA Clone Website",
+});
+useSeoMeta({
+  title: "Jannata Resort and SPA Clone Website",
+  ogTitle: "Jannata Resort and SPA Clone Website",
+  description: "This is my clone site of Jannata Resort and SPA",
+  ogDescription: "This is my clone site of Jannata Resort and SPA",
+  ogImage: "https://jannata-resort-clone.vercel.app/image.png",
+  twitterCard: "summary_large_image",
 });
 
 definePageMeta({

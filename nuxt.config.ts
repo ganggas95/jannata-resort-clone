@@ -16,4 +16,11 @@ export default defineNuxtConfig({
     "@hypernym/nuxt-gsap",
     "nuxt-icon",
   ],
+  app: {
+    head: {
+      charset: "utf-8",
+      viewport: "width=device-width, initial-scale=1",
+      
+    }
+  }
 });
