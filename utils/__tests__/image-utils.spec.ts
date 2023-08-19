@@ -1,6 +1,6 @@
 import { it, expect, describe } from "vitest";
-import { mergeAwsImagePath } from "./image-utils";
-import { FeaturedTypes } from "types/homepage.types";
+import { mergeAwsImagePath } from "../image-utils";
+import { FeaturedTypes } from "@/types/homepage.types";
 
 describe("image-utils", () => {
   it("should concatenate the AWS file URL, path, and filename to generate the complete image path", () => {

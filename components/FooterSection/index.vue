@@ -1,12 +1,31 @@
+<script setup lang="ts">
+import { useTimeLogic } from "@/composable/useTimeLogic";
+import { useTemperatureLogic } from "@/composable/useTemperatureLogic";
+
+const { minuteString, hourString, amPMValue, dotStyles } = useTimeLogic();
+const { temperature } = useTemperatureLogic();
+</script>
+
 <template>
   <footer>
     <div class="container">
       <div class="additional-info">
         <div class="time">
-          <span class="time-value">12:01</span>
-          <span class="time-format">PM</span>
+          <span class="time-value"
+            >{{ hourString }}<span :style="dotStyles">:</span
+            >{{ minuteString }}</span
+          >
+          <span class="time-format">{{ amPMValue }}</span>
         </div>
-        <div class="temperature">23°C</div>
+        <div class="temperature">
+          <span>{{ temperature?.current.temp_c || 0 }}°C</span>
+          <small
+            >Powered by
+            <a href="https://www.weatherapi.com/" title="Weather API"
+              >WeatherAPI.com</a
+            ></small
+          >
+        </div>
       </div>
       <div class="address-info">
         <h3>Our Address</h3>
@@ -42,7 +61,11 @@
 </template>
 <style lang="scss" scoped>
 footer {
-  background: linear-gradient(0deg, var(--secondary-color), var(--green-light-color));
+  background: linear-gradient(
+    0deg,
+    var(--secondary-color),
+    var(--green-light-color)
+  );
   padding: 100px 0px 90px 0px;
   color: var(--white-color);
   .container {
@@ -82,6 +105,18 @@ footer {
     }
     .temperature {
       font-size: 45px;
+      display: flex;
+      flex-direction: column;
+      small {
+        letter-spacing: 1px;
+      }
+      a {
+        color: var(--gray-light-color);
+
+        &:hover {
+          color: var(--white-color);
+        }
+      }
     }
   }
   .address-info {
