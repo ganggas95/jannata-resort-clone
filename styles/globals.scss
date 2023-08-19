@@ -30,23 +30,7 @@ body {
   -webkit-text-size-adjust: 100%;
   -webkit-font-smoothing: antialiased;
 }
-html,
-body,
-h1,
-h2,
-h3,
-h4,
-h5,
-h6,
-a,
-span,
-ul,
-ol,
-li,
-strong,
-p,
-small,
-button {
+* {
   margin: 0;
   padding: 0;
 }
@@ -142,4 +126,8 @@ input[type="number"]::-moz-number-spinbox,
 input[type="number"]::-moz-number-spin-up,
 input[type="number"]::-moz-number-spin-down {
   display: none;
+}
+
+small {
+  font-size: 9px;
 }
