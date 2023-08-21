@@ -1,6 +1,6 @@
-# Nuxt 3 Minimal Starter
+# Jannata Resort and SPA Clone Website 
 
-Look at the [Nuxt 3 documentation](https://nuxt.com/docs/getting-started/introduction) to learn more.
+This website is clone of [Jannata Resort and SPA](https://jannataresort.com/) Website. This project build using Nuxt3. 
 
 ## Setup
 
@@ -60,4 +60,14 @@ pnpm run preview
 yarn preview
 ```
 
+## Testing
+
+
+```bash
+# npm
+npm run test
+
+# yarn
+yarn test
+```
 Check out the [deployment documentation](https://nuxt.com/docs/getting-started/deployment) for more information.
