@@ -14,8 +14,18 @@ export const useTimeLogic = () => {
   const interval = ref<NodeJS.Timeout | null>(null);
   const timeHitter = ref(false);
 
+  const hourValue = computed(() => {
+    /**
+     * Calculate the hour value based on the hour reference.
+     *
+     * @return {number} The calculated hour value.
+     */
+    if (hourRef.value === 24) return 0;
+    return hourRef.value > 12 ? hourRef.value - 12 : hourRef.value;
+  });
+
   const hourString = computed(() => {
-    return timeNumberToString(hourRef.value);
+    return timeNumberToString(hourValue.value);
   });
   const minuteString = computed(() => {
     return timeNumberToString(minuteRef.value);
@@ -57,5 +67,6 @@ export const useTimeLogic = () => {
     dotStyles,
     amPMValue,
     timeHitter,
+    hourValue,
   };
 };
